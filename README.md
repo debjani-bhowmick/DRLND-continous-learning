@@ -4,7 +4,7 @@
 
 1. [Summary](#summary)
 2. [Installation](#installation)
-3. [Getting Started](#Getting Started)
+3. [Getting Started](#GettingStarted)
 4. [File Descriptions](#files)
 5. [Experiments](#experiments)
 
