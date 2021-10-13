@@ -40,6 +40,7 @@ Agent Reward Function (independent):
 **Environment Solving Criteria:** The target for the agent is to solve the environment by achieving a score of +30 averaged across all 20 agents for 100 consecutive episodes.
 The most straigh forward approach is to define the actions by a twelve dimensional vector.
 
+
 ##### **state-action spaces**
 
 `Number of agents:` 20
@@ -76,7 +77,16 @@ There are 20 agents. Each observes a state with length: 33
 
 
 ## Architecture
-Following is the Neural Network architecture;
+
+The model architecture is a neural network architecture consisting cascaded pairs of linear and non-linear layers.
+
+For both the Actor and Critic, the size of the input linear layer is the state size, and the size of the output linear layer is the number of possible actions.
+
+The output of the Actor is concatenated to the Critic's first layer output to be connected to the first hidden layer's input.
+
+Following is the Neural Network architecture:
+
+
 
 
 
