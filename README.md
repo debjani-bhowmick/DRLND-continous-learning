@@ -52,7 +52,13 @@ This yields an average score for each episode (where the average is over all 20 
 
 ## Getting Started <a name="Getting Started"></a>
 
-#### *Step 1:*  Activate the Environment
+#### *Step 1:* Clone the repo:
+`git clone` 
+
+#### *Step 2:*Change directory into the repo:
+`cd continuous-control`
+
+#### *Step 3:*  Activate the Environment
 
 For details related to setting up the Python environment for this project, please follow the instructions provided in the DRLND GitHub repository[https://github.com/udacity/deep-reinforcement-learning]. These instructions can be found in README.md at the root of the repository. By following these instructions, user will be able to install the required PyTorch library, the ML-Agents toolkit, and a few more Python packages required for this project.
 
@@ -61,7 +67,9 @@ For details related to setting up the Python environment for this project, pleas
 Further, the specific files to look into in the repository is python/setup.py and requiremnets.txt. The readme provides thorough details related to setting up the environment.
 
 
-#### *Step 2:* Download the Unity Environment
+
+
+#### *Step 4:* Download the Unity Environment
 
 For this project, you will not need to install Unity - this is because environment has buit for you, and you can download it from one of the links below. You need only select the environment that matches your operating systM
 
@@ -74,7 +82,21 @@ Download the environment from one of the links below. You need only select the e
 
 (For Windows users) Check out this link(https://support.microsoft.com/en-us/windows/32-bit-and-64-bit-windows-frequently-asked-questions-c6ca9541-8dce-4d48-0415-94a3faa2e13d) if you need help with determining if your computer is running a 32-bit version or 64-bit version of the Windows operating system.
 
-(For AWS) If you'd like to train the agent on AWS (and have not enabled a virtual screen (https://github.com/Unity-Technologies/ml-agents/blob/main/docs/Training-on-Amazon-Web-Service.md)), then please use this link (version 1) or this link (version 2) to obtain the "headless" version of the environment. You will not be able to watch the agent without enabling a virtual screen, but you will be able to train the agent. (To watch the agent, you should follow the instructions to enable a virtual screen(https://github.com/Unity-Technologies/ml-agents/blob/main/docs/Training-on-Amazon-Web-Service.md), and then download the environment for the Linux operating system above.)
+#### *Step 5:*  Unzip (or decompress) the downloaded file:
+
+* Linux:
+`unzip Reacher_Linux.zip`
+* Mac OSX:
+`unzip -a Reacher.app.zip`
+* Windows (32-bit): [PowerShell]
+`Expand-Archive -Path Reacher_Windows_x86.zip -DestinationPath .
+*Windows (64-bit): [PowerShell]
+`Expand-Archive -Path Reacher_Windows_x86_64.zip -DestinationPath .`
+
+
+#### *Step 5:* Train the model with the notebook:
+ Activate the environmnet and play with Continuous_Control.ipynb to see the results 
+
 
 ## File Descriptions <a name="files"></a>
 The repo is structured as follows:
