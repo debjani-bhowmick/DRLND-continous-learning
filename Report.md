@@ -32,9 +32,25 @@ Agent Reward Function (independent):
 * Vector Observation space: 33 variables corresponding to position, rotation, velocity, and angular velocities of the two arm Rigidbodies.
 * Vector Action space: (Continuous) Each action is a vector with four numbers, corresponding to torque applicable to two joints. Every entry in the action vector should be a number between -1 and 1.
 * Visual Observations: None.
+* 
 **Reset Parameters:** Two, corresponding to goal size, and goal movement speed.
 **Environment Solving Criteria:** The target for the agent is to solve the environment by achieving a score of +30 averaged across all 20 agents for 100 consecutive episodes.
-The most straigh forward approach is to define the actions by a twelve dimensional vecto
+The most straigh forward approach is to define the actions by a twelve dimensional vector.
+
+#### **state-action spaces**
+
+Number of agents: 20
+Size of each action: 4
+There are 20 agents. Each observes a state with length: 33
+The state for the first agent looks like: [  0.00000000e+00  -4.00000000e+00   0.00000000e+00   1.00000000e+00
+  -0.00000000e+00  -0.00000000e+00  -4.37113883e-08   0.00000000e+00
+   0.00000000e+00   0.00000000e+00   0.00000000e+00   0.00000000e+00
+   0.00000000e+00   0.00000000e+00  -1.00000000e+01   0.00000000e+00
+   1.00000000e+00  -0.00000000e+00  -0.00000000e+00  -4.37113883e-08
+   0.00000000e+00   0.00000000e+00   0.00000000e+00   0.00000000e+00
+   0.00000000e+00   0.00000000e+00   5.75471878e+00  -1.00000000e+00
+   5.55726624e+00   0.00000000e+00   1.00000000e+00   0.00000000e+00
+  -1.68164849e-01]
 
 
 
