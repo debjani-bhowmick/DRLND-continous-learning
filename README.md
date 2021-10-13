@@ -25,19 +25,17 @@ For this project, we have provided with two separate versions of the Unity envir
 
 ## Environment <a name="Environment"></a>
 
-* * Set-up:* Double-jointed arm which can move to target locations.
-* * Goal:* Each agent must move its hand to the goal location, and keep it there.
-* * Agents:* The environment contains 20 agents linked to a single Brain.
-* * Agent Reward Function (independent): * +0.1 for each timestep agent's hand is in goal location.
+* *Set-up:* Double-jointed arm which can move to target locations.
+* *Goal:* Each agent must move its hand to the goal location, and keep it there.
+* *Agents:* The environment contains 20 agents linked to a single Brain.
+* *Agent Reward Function (independent): * +0.1 for each timestep agent's hand is in goal location.
 * *Brains:*  One Brain with the following observation/action space.
 
-         * Vector Observation space: 33 variables corresponding to position, rotation, velocity, and angular velocities of the two arm Rigidbodies.  
+         * * Vector Observation space: * 33 variables corresponding to position, rotation, velocity, and angular velocities of the two arm Rigidbodies.  
         
-         * Vector Action space: (Continuous) Each action is a vector with four numbers, corresponding to torque applicable to two joints. 
-         
-         * Every entry in the action vector should be a number between -1 and 1. 
+         * * Vector Action space: * (Continuous) Each action is a vector with four numbers, corresponding to torque applicable to two joints. Every entry in the action vector should be a number between -1 and 1. 
            
-         * Visual Observations: None.
+         * *Visual Observations: * None.
 * Reset Parameters: Two, corresponding to goal size, and goal movement speed.
 * Environment Solving Criteria: The target for the agent is to solve the environment by achieving a score of +30 averaged across all 20 agents for 100 consecutive episodes.
 
