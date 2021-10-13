@@ -53,7 +53,7 @@ This yields an average score for each episode (where the average is over all 20 
 ## Getting Started <a name="Getting Started"></a>
 
 #### *Step 1:* Clone the repo:
-`git clone` 
+`git clone https://github.com/debjani-bhowmick/DRLND-continous-learning.git` 
 
 #### *Step 2:*Change directory into the repo:
 `cd continuous-control`
