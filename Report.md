@@ -2,11 +2,12 @@
 
 ## Learning Algorithm
 
-The algorithm implemented to solve this environment is Deep Deterministic Policy Gradient which combines both Q-learning and Policy gradients. At its core, it uses a stochastic behavior policy for good exploration but estimates a deterministic target policy, which is much easier to learn.This is a model-free, off-policy actor-critic algorithm using deep function approximators that can learn policies in high-dimensional, continuous action spaces.
+The algorithm implemented to solve this environment is `Deep Deterministic Policy Gradient`, which combines both `Q-learning` and `Policy gradients`. At its core, it uses a stochastic behavior policy for good exploration but estimates a deterministic target policy, which is much easier to learn. This is a `model-free`, `off-policy` actor-critic algorithm using deep function approximators that can learn policies in high-dimensional `continuous action spaces`.
 
 
 ## The Model
- It primarily uses two neural networks, one for the actor and one for the critic. The critic is a Q-value network that takes in state and action as input and outputs the Q-value. 
+
+It primarily uses two neural networks, one for the actor and one for the critic. The critic is a Q-value network that takes in state and action as input and outputs the Q-value. 
  
  ![](images/NeuralNetwork.png)
 
@@ -16,12 +17,14 @@ The algorithm implemented to solve this environment is Deep Deterministic Policy
 * The Actor-Network consists of two hiddenlayers with relu activation. For the Output-layer a tanh-function is used in order to map the 	output the servo angles.
 
 The following pseudocode shows the DDPG Algorithm by (Lillicrap et al., 2015).
+
  ![](images/pseudocode)
-The critic is trained by minimizing the bellman equation. But in contrast to Deep-Q-Learning it only outpus one Q-value per state-action pair. The actor on the other hand can be trained by directly applying the gradient. The equation was derived by (Silver et al., 2014).
+ 
+The critic is trained by minimizing the bellman equation. But in contrast to Deep-Q-Learning it only outpus one Q-value per state-action pair. The actor on the other hand can be trained by directly applying the gradient.
 
-However enviornment, actions, state and reward need to be defined:
+`Enviornment`, `actions`, `state` and `reward` need to be defined:
 
-#### The Environment
+##### The Environment
 
 **Set-up:** Double-jointed arm which can move to target locations.
 **Goal:** Each agent must move its hand to the goal location, and keep it there.
@@ -37,15 +40,15 @@ Agent Reward Function (independent):
 **Environment Solving Criteria:** The target for the agent is to solve the environment by achieving a score of +30 averaged across all 20 agents for 100 consecutive episodes.
 The most straigh forward approach is to define the actions by a twelve dimensional vector.
 
-#### **state-action spaces**
+##### **state-action spaces**
 
-Number of agents: 20
+`Number of agents:` 20
 
-Size of each action: 4
+`Size of each action:` 4
 
 There are 20 agents. Each observes a state with length: 33
 
-The state for the first agent looks like: [  0.00000000e+00  -4.00000000e+00   0.00000000e+00   1.00000000e+00
+`The state for the first agent looks like:` [  0.00000000e+00  -4.00000000e+00   0.00000000e+00   1.00000000e+00
   -0.00000000e+00  -0.00000000e+00  -4.37113883e-08   0.00000000e+00
    0.00000000e+00   0.00000000e+00   0.00000000e+00   0.00000000e+00
    0.00000000e+00   0.00000000e+00  -1.00000000e+01   0.00000000e+00
@@ -57,6 +60,7 @@ The state for the first agent looks like: [  0.00000000e+00  -4.00000000e+00   0
 
 
 #### **Hyperparameters**
+
 | Parameter | Description | Value |
 | --- | --- | --- |
 | `GAMMA` | Discount factor | 0.99 |
