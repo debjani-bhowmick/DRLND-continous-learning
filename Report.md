@@ -32,7 +32,7 @@ Agent Reward Function (independent):
 * Vector Observation space: 33 variables corresponding to position, rotation, velocity, and angular velocities of the two arm Rigidbodies.
 * Vector Action space: (Continuous) Each action is a vector with four numbers, corresponding to torque applicable to two joints. Every entry in the action vector should be a number between -1 and 1.
 * Visual Observations: None.
-* 
+
 **Reset Parameters:** Two, corresponding to goal size, and goal movement speed.
 **Environment Solving Criteria:** The target for the agent is to solve the environment by achieving a score of +30 averaged across all 20 agents for 100 consecutive episodes.
 The most straigh forward approach is to define the actions by a twelve dimensional vector.
@@ -40,8 +40,11 @@ The most straigh forward approach is to define the actions by a twelve dimension
 #### **state-action spaces**
 
 Number of agents: 20
+
 Size of each action: 4
+
 There are 20 agents. Each observes a state with length: 33
+
 The state for the first agent looks like: [  0.00000000e+00  -4.00000000e+00   0.00000000e+00   1.00000000e+00
   -0.00000000e+00  -0.00000000e+00  -4.37113883e-08   0.00000000e+00
    0.00000000e+00   0.00000000e+00   0.00000000e+00   0.00000000e+00
@@ -68,7 +71,16 @@ The state for the first agent looks like: [  0.00000000e+00  -4.00000000e+00   0
 
 ## Future Improvement
 
+## References:
+(Mnih et al., 2013), Playing Atari with Deep Reinforcement Learning
+
+(Silver et al. 2014), Deterministic Policy Gradient
+
+(Lillicrap et al., 2015), Continuous control with deep reinforcement learning
+
 
 ## Acknowledgments
+I gratefully acknowled the Udacity DRLND course.
+
 
 
