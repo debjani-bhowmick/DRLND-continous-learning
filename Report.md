@@ -56,20 +56,41 @@ The state for the first agent looks like: [  0.00000000e+00  -4.00000000e+00   0
   -1.68164849e-01]
 
 
-
+#### **Hyperparameters**
+| Parameter | Description | Value |
+| --- | --- | --- |
+| `GAMMA` | Discount factor | 0.99 |
+| `TAU` | Soft update of target parameters| 1e-3 |
+| `LR_ACTOR` | Learning rate for the actor | 1e-3 |
+| `LR_CRITIC` | Learning rate for the critic | 1e-0 |
+| `WEIGHT_DECAY` | L2 Weight decay | 0.0000 |
+| `BATCH_SIZE` | Minibatch size | 128|
+| `BUFFER_SIZE` | Size for memory buffer | int(1e6)|
+| `LEARN_EVERY` | Learning timestep interval | 20 |       
+| `LEARN_NUM` | Number of learning passes | 0.99 |
 
 
 
 ## Architecture
+Following is the Neural Network architecture;
+
 
 
 
 ## Result
 
+The agent was able to solve the 20 agent Reacher environment. The goal for the performance measure is an average reward of at least +30 over 100 episodes, and over all 20 agents.
+
+
+
 
 
 
 ## Future Improvement
+
+**Prioritized Experience Replay:** Prioritized replay selects experiences based on a priority value that is correlated with the magnitude of error. This can improve learning by increasing the probability that rare and important experience vectors are sampled. Check out Prioritized Experience Replay paper by DeepMind. Utilizing this technique helps reduce the training time, improve the stability of the training process and is less prone to the change in hyperparameters.
+
+**Experiment with other algorithms:** Fine tuning the DDPG algorithm required a lot of trial and error and so more time is needed. Perhaps another algorithms as Trust Region Policy Optimization (TRPO), [Proximal Policy Optimization (PPO)](Proximal Policy Optimization Algorithms), or Distributed Distributional Deterministic Policy Gradients (D4PG) would be more robust.
 
 ## References:
 (Mnih et al., 2013), Playing Atari with Deep Reinforcement Learning
