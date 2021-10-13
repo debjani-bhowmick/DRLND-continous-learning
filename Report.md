@@ -11,9 +11,9 @@ The algorithm implemented to solve this environment is Deep Deterministic Policy
  ![](images/NeuralNetwork.png)
 
 
-	The Critic-Network consists of two hiddenlayer with Sigmoid activation.
+* The Critic-Network consists of two hiddenlayer with Sigmoid activation.
 
-	The Actor-Network consists of two hiddenlayers with relu activation. For the Output-layer a tanh-function is used in order to map the 	output the servo angles.
+* The Actor-Network consists of two hiddenlayers with relu activation. For the Output-layer a tanh-function is used in order to map the 	output the servo angles.
 
 The following pseudocode shows the DDPG Algorithm by (Lillicrap et al., 2015).
 
