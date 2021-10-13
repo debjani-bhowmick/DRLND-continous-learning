@@ -7,6 +7,8 @@ The algorithm implemented to solve this environment is Deep Deterministic Policy
 
 ## The Model
  It primarily uses two neural networks, one for the actor and one for the critic. The critic is a Q-value network that takes in state and action as input and outputs the Q-value. 
+ 
+ ![](images/NeuralNetwork.png)
 
 
 	The Critic-Network consists of two hiddenlayer with Sigmoid activation.
