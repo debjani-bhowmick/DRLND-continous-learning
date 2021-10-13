@@ -78,15 +78,14 @@ Download the environment from one of the links below. You need only select the e
 The repo is structured as follows:
 
 * Continuous_Control.ipynb: This is where the DDPG agent is trained.
-* Continuous_Control.html: html view for Continuous_Control.ipynb
 * ddpg_agent.py: This module implements a class to represent a DDPG agent.
+* checkpoint_actor.pth: This is the binary containing the trained neural network weights for Actor.
+* checkpoint_critic.pth: This is the binary containing the trained neural network weights for Critic.
 * model.py: This module contains the implementation of the Actor and Critic neural networks.
 * Report.md: Project report and result analysis.
 * README.md: Readme file.
 * folder:checkpoints: Contains the models saved during training.
-  `checkpoint_actor.pth:` This is the binary containing the trained neural network weights for Actor.
-  
-  `checkpoint_critic.pth:` This is the binary containing the trained neural network weights for Critic.
+* folder:python: This folder has been directly copied from the original repository of Udacity Deep Reinforcement Learning Nanodegree, and contains the files related to                 installation and set up of the environment.
 * folder:Images: Contains screenshots of the results as well as additional images used for this document.
 
 
