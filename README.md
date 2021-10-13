@@ -38,17 +38,10 @@ Vector Action space:* (Continuous) Each action is a vector with four numbers, co
 Visual Observations:* None.
 
 * Reset Parameters: Two, corresponding to goal size, and goal movement speed.
-* Environment Solving Criteria: The target for the agent is to solve the environment by achieving a score of +30 averaged across all 20 agents for 100 consecutive episodes.
 
 #### Solving the Environment
-** Criteria for solving the environment** 
 
-The barrier for solving the environment is to take into account the presence of many agents. In particular, your agents must get an average score of +30 (over 100 consecutive episodes, and over all agents). Specifically,
-
-After each episode, we add up the rewards that each agent received (without discounting), to get a score for each agent. This yields 20 (potentially different) scores. We then take the average of these 20 scores.
-This yields an average score for each episode (where the average is over all 20 agents).
-
-`The environment is considered solved, when the average (over 100 episodes) of those average scores is at least +30.`
+* Environment Solving Criteria: The target for the agent is to solve the environment by achieving a score of +30 averaged across all 20 agents for 100 consecutive episodes.
 
 
 ## Getting Started <a name="Getting Started"></a>
