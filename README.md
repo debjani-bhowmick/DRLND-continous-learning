@@ -25,11 +25,11 @@ For this project, we have provided with two separate versions of the Unity envir
 
 ## Environment <a name="Environment"></a>
 
-* *Set-up:* Double-jointed arm which can move to target locations.
-* *Goal:* Each agent must move its hand to the goal location, and keep it there.
-* *Agents:* The environment contains 20 agents linked to a single Brain.
-* Agent Reward Function (independent): +0.1 for each timestep agent's hand is in goal location.
-* Brains: One Brain with the following observation/action space.
+* * Set-up:* Double-jointed arm which can move to target locations.
+* * Goal:* Each agent must move its hand to the goal location, and keep it there.
+* * Agents:* The environment contains 20 agents linked to a single Brain.
+* * Agent Reward Function (independent): * +0.1 for each timestep agent's hand is in goal location.
+* *Brains:*  One Brain with the following observation/action space.
 
          * Vector Observation space: 33 variables corresponding to position, rotation, velocity, and angular velocities of the two arm Rigidbodies.  
         
