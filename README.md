@@ -48,51 +48,46 @@ This yields an average score for each episode (where the average is over all 20 
 `The environment is considered solved, when the average (over 100 episodes) of those average scores is at least +30.`
 
 
-## Installation <a name="installation"></a>
-
-This code has been tested with Anaconda distribution of `Python 3.6`. Additional libraries used in the project are: 
-
-cudatoolkit 10.0<br>
-numpy 1.19.1: Install with 'pip install numpy'. <br> 
-matplotlib 3.2.2<br>
-ml-agents: Install by following instructions here.
-Beyond performing standard installation of the above packages, no additional installations are required to run code in this project.
-
 ## Getting Started <a name="Getting Started"></a>
 
+#### *Step 1:*  Activate the Environment
+
+For details related to setting up the Python environment for this project, please follow the instructions provided in the DRLND GitHub repository[https://github.com/udacity/deep-reinforcement-learning]. These instructions can be found in README.md at the root of the repository. By following these instructions, user will be able to install the required PyTorch library, the ML-Agents toolkit, and a few more Python packages required for this project.
+
+(For Windows users) The ML-Agents toolkit supports Windows 10 currently. In general, ML-Agents toolkit could possibly be used for other versions, however, it has not been tested officially, and we recommend choosing Windows 10. Also, the ML-Agents toolkit has not been tested on a Windows VM such as Bootcamp or Parallels.
+
+Further, the specific files to look into in the repository is python/setup.py and requiremnets.txt. The readme provides thorough details related to setting up the environment.
+
+
+#### *Step 2:* Download the Unity Environment
+
+For this project, you will not need to install Unity - this is because environment has buit for you, and you can download it from one of the links below. You need only select the environment that matches your operating systM
 
 Download the environment from one of the links below. You need only select the environment that matches your operating system:
 
-Version 1: One (1) Agent
+* Linux: (click here)[https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher_Linux.zip]
+* Mac OSX: (click here)[https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher.app.zip]
+* Windows (32-bit): (click here)[https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher_Windows_x86.zip]
+* Windows (64-bit): (click here)[https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher_Windows_x86_64.zip]
 
-* Linux: click here
-* Mac OSX: click here
-* Windows (32-bit): click here
-* Windows (64-bit): click here
-
-Version 2: Twenty (20) Agents
-
-* Linux: click here
-* Mac OSX: click here
-* Windows (32-bit): click here
-* Windows (64-bit): click here
-* 
 (For Windows users) Check out this link(https://support.microsoft.com/en-us/windows/32-bit-and-64-bit-windows-frequently-asked-questions-c6ca9541-8dce-4d48-0415-94a3faa2e13d) if you need help with determining if your computer is running a 32-bit version or 64-bit version of the Windows operating system.
 
 (For AWS) If you'd like to train the agent on AWS (and have not enabled a virtual screen (https://github.com/Unity-Technologies/ml-agents/blob/main/docs/Training-on-Amazon-Web-Service.md)), then please use this link (version 1) or this link (version 2) to obtain the "headless" version of the environment. You will not be able to watch the agent without enabling a virtual screen, but you will be able to train the agent. (To watch the agent, you should follow the instructions to enable a virtual screen(https://github.com/Unity-Technologies/ml-agents/blob/main/docs/Training-on-Amazon-Web-Service.md), and then download the environment for the Linux operating system above.)
 
 ## File Descriptions <a name="files"></a>
-
-The code is structured as follows:
+The repo is structured as follows:
 
 * Continuous_Control.ipynb: This is where the DDPG agent is trained.
 * Continuous_Control.html: html view for Continuous_Control.ipynb
 * ddpg_agent.py: This module implements a class to represent a DDPG agent.
 * model.py: This module contains the implementation of the Actor and Critic neural networks.
-* checkpoint_actor.pth: This is the binary containing the trained neural network weights for Actor.
-* checkpoint_critic.pth: This is the binary containing the trained neural network weights for Critic.
 * Report.md: Project report and result analysis.
 * README.md: Readme file.
+* folder:checkpoints: Contains the models saved during training.
+  `checkpoint_actor.pth:` This is the binary containing the trained neural network weights for Actor.
+  
+  `checkpoint_critic.pth:` This is the binary containing the trained neural network weights for Critic.
+* folder:Images: Contains screenshots of the results as well as additional images used for this document.
 
 
 ## Experiments <a name="experiments"></a>
