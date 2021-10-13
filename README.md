@@ -32,8 +32,11 @@ For this project, we have provided with two separate versions of the Unity envir
 * Brains: One Brain with the following observation/action space.
 
          - Vector Observation space: 33 variables corresponding to position, rotation, velocity, and angular velocities of the two arm Rigidbodies.  
+        
          - Vector Action space: (Continuous) Each action is a vector with four numbers, corresponding to torque applicable to two joints. 
-           Every entry in the action vector should be a number between -1 and 1. 
+         
+         - Every entry in the action vector should be a number between -1 and 1. 
+           
          - Visual Observations: None.
 * Reset Parameters: Two, corresponding to goal size, and goal movement speed.
 * Environment Solving Criteria: The target for the agent is to solve the environment by achieving a score of +30 averaged across all 20 agents for 100 consecutive episodes.
