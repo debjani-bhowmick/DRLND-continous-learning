@@ -16,11 +16,8 @@ The algorithm implemented to solve this environment is Deep Deterministic Policy
 * The Actor-Network consists of two hiddenlayers with relu activation. For the Output-layer a tanh-function is used in order to map the 	output the servo angles.
 
 The following pseudocode shows the DDPG Algorithm by (Lillicrap et al., 2015).
+ ![](images/pseudocode.png)
 
-
-
-
- ###Psudocode
 
 
 
