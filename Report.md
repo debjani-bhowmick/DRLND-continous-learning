@@ -102,9 +102,12 @@ The agent was able to solve the 20 agent Reacher environment. The goal for the p
 
 ## Future Improvement
 
-**Prioritized Experience Replay:** Prioritized replay selects experiences based on a priority value that is correlated with the magnitude of error. This can improve learning by increasing the probability that rare and important experience vectors are sampled. Check out Prioritized Experience Replay paper by DeepMind. Utilizing this technique helps reduce the training time, improve the stability of the training process and is less prone to the change in hyperparameters.
+**Prioritized Experience Replay:** as per DeepMind,` Prioritized Experience Replay` technique helps reduce the training time, improve the stability of the training process and is less prone to the change in hyperparameters.This could be tried in future.
 
-**Experiment with other algorithms:** Fine tuning the DDPG algorithm required a lot of trial and error and so more time is needed. Perhaps another algorithms as Trust Region Policy Optimization (TRPO), [Proximal Policy Optimization (PPO)](Proximal Policy Optimization Algorithms), or Distributed Distributional Deterministic Policy Gradients (D4PG) would be more robust.
+**Experiment with other algorithms:** Trying different hyperparametrs of the DDPG algorithm required a lot of trial and error and so more time is needed. For example
+* Increase number of training episodes
+* Increase depth of each network, etc could be tried to see the model performance.
+More robust algorithms like Trust Region Policy Optimization (TRPO), [Proximal Policy Optimization (PPO)](Proximal Policy Optimization Algorithms), or Distributed Distributional Deterministic Policy Gradients (D4PG) could be tried in future.
 
 ## References:
 (Mnih et al., 2013), Playing Atari with Deep Reinforcement Learning
