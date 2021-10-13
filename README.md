@@ -30,12 +30,11 @@ For this project, we have provided with two separate versions of the Unity envir
 * *Agents:* The environment contains 20 agents linked to a single Brain.
 * Agent Reward Function (independent): +0.1 for each timestep agent's hand is in goal location.
 * *Brains:* One Brain with the following observation/action space.
-         [0] Vector Observation space: 33 variables corresponding to position, rotation, velocity, and angular velocities of the two arm Rigidbodies.
-         
-         [0] Vector Action space: (Continuous) Each action is a vector with four numbers, corresponding to torque applicable to two joints. 
-           Every entry in the action vector should be a number between -1 and 1.
-           
-         [0] Visual Observations: None.
+
+         [o] Vector Observation space: 33 variables corresponding to position, rotation, velocity, and angular velocities of the two arm Rigidbodies.  
+         [o] Vector Action space: (Continuous) Each action is a vector with four numbers, corresponding to torque applicable to two joints. 
+           Every entry in the action vector should be a number between -1 and 1. 
+         [o] Visual Observations: None.
 * Reset Parameters: Two, corresponding to goal size, and goal movement speed.
 * Environment Solving Criteria: The target for the agent is to solve the environment by achieving a score of +30 averaged across all 20 agents for 100 consecutive episodes.
 
