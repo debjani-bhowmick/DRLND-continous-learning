@@ -1,14 +1,15 @@
 # DRLND-continous-learning
 
-### Table of Contents
+## Table of Contents
 
 1. [Summary](#summary)
-2. [Installation](#installation)
-3. [Getting Started](#GettingStarted)
-4. [File Descriptions](#files)
-5. [Experiments](#experiments)
+2. [Environment](#Environment)
+3. [Installation](#installation) 
+4. [Getting Started](#GettingStarted)
+5. [File Descriptions](#files)
+6. [Experiments](#experiments)
 
-### Summary <a name="summary"></a>
+##  Summary <a name="summary"></a>
 
 In this environment, a double-jointed arm can move to target locations. A reward of +0.1 is provided for each step that the agent's hand is in the goal location. Thus, the goal of your agent is to maintain its position at the target location for as many time steps as possible.
 
@@ -22,7 +23,7 @@ For this project, we have provided with two separate versions of the Unity envir
 * The second version contains 20 identical agents, each with its own copy of the environment.
 
 
-### Environment <a name="Environment"></a>
+## Environment <a name="Environment"></a>
 
 * Set-up: Double-jointed arm which can move to target locations.
 * Goal: Each agent must move its hand to the goal location, and keep it there.
@@ -96,5 +97,4 @@ Follow the instructions in Continuous_Control.ipynb to get started with training
 Trained model weights is included for quickly running the agent and seeing the result in Unity ML Agent.
 
 Run the last cell of the notebook Continuous_Control.ipynb.
-
 
