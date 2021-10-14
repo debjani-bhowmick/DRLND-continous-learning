@@ -15,13 +15,6 @@ In this environment, a double-jointed arm can move to target locations. A reward
 
 The observation space consists of 33 variables corresponding to position, rotation, velocity, and angular velocities of the arm. Each action is a vector with four numbers, corresponding to torque applicable to two joints. Every entry in the action vector should be a number between -1 and 1.
 
-#### Distributed Training
-
-For this project, we have provided with two separate versions of the Unity environment:
-
-* The first version contains a single agent.
-* The second version contains 20 identical agents, each with its own copy of the environment.
-
 
 ## Environment <a name="Environment"></a>
 
@@ -75,6 +68,8 @@ Download the environment from one of the links below. You need only select the e
 * Windows (64-bit): (click here)[https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher_Windows_x86_64.zip]
 
 (For Windows users) Check out this link(https://support.microsoft.com/en-us/windows/32-bit-and-64-bit-windows-frequently-asked-questions-c6ca9541-8dce-4d48-0415-94a3faa2e13d) if you need help with determining if your computer is running a 32-bit version or 64-bit version of the Windows operating system.
+
+copy this downloaded file to the local repo folder
 
 #### *Step 5:*  Unzip (or decompress) the downloaded file:
 
