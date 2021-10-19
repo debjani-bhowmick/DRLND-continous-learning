@@ -76,16 +76,6 @@ There are 2 agents. Each observes a state with length: 24
 
 
 
-
-
-
-
-
-
-
-
-
-
 ## Architecture
 
 The model architecture is a neural network architecture consisting cascaded pairs of linear and non-linear layers.
@@ -95,6 +85,14 @@ For both the Actor and Critic, the size of the input linear layer is the state s
 The output of the Actor is concatenated to the Critic's first layer output to be connected to the first hidden layer's input.
 
 Following is the Neural Network architecture:
+ ##### The actor network
+ 
+ ![](images/actor_arc.png)
+ 
+ ##### The critic network
+ 
+ ![](images/critic_arc.png)
+  
 
 
 
