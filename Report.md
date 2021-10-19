@@ -43,36 +43,46 @@ The most straigh forward approach is to define the actions by a twelve dimension
 
 ##### **state-action spaces**
 
-`Number of agents:` 20
+`Number of agents:`  2
 
-`Size of each action:` 4
+`Size of each action:` 2
 
-There are 20 agents. Each observes a state with length: 33
+There are 2 agents. Each observes a state with length: 24
 
-`The state for the first agent looks like:` [  0.00000000e+00  -4.00000000e+00   0.00000000e+00   1.00000000e+00
-  -0.00000000e+00  -0.00000000e+00  -4.37113883e-08   0.00000000e+00
-   0.00000000e+00   0.00000000e+00   0.00000000e+00   0.00000000e+00
-   0.00000000e+00   0.00000000e+00  -1.00000000e+01   0.00000000e+00
-   1.00000000e+00  -0.00000000e+00  -0.00000000e+00  -4.37113883e-08
-   0.00000000e+00   0.00000000e+00   0.00000000e+00   0.00000000e+00
-   0.00000000e+00   0.00000000e+00   5.75471878e+00  -1.00000000e+00
-   5.55726624e+00   0.00000000e+00   1.00000000e+00   0.00000000e+00
-  -1.68164849e-01]
+`The state for the first agent looks like`: [ 0.          0.          0.          0.          0.          0.          0.
+  0.          0.          0.          0.          0.          0.          0.
+  0.          0.         -6.65278625 -1.5        -0.          0.
+  6.83172083  6.         -0.          0.        ]
 
 
 #### **Hyperparameters**
 
 | Parameter | Description | Value |
 | --- | --- | --- |
-| `GAMMA` | Discount factor | 0.99 |
-| `TAU` | Soft update of target parameters| 1e-3 |
-| `LR_ACTOR` | Learning rate for the actor | 1e-3 |
-| `LR_CRITIC` | Learning rate for the critic | 1e-0 |
-| `WEIGHT_DECAY` | L2 Weight decay | 0.0000 |
-| `BATCH_SIZE` | Minibatch size | 128|
-| `BUFFER_SIZE` | Size for memory buffer | int(1e6)|
-| `LEARN_EVERY` | Learning timestep interval | 20 |       
-| `LEARN_NUM` | Number of learning passes | 0.99 |
+| `gamma` | Discount factor | 0.99 |
+| `tau` | Soft update of target parameters| 7e-2 |
+| `lr_actor` | Learning rate for the actor | 1e-3 |
+| `lr_critic` | Learning rate for the critic | 1e-3  |
+| `weight_deacy` | L2 Weight decay | 0.0000 |
+| `epoch decay` | episode to end the noise decay process | 250 |
+| `batch_size` | Minibatch size | 128|
+| `buffer_size` | Size for memory buffer | int(1e6)|
+| `learn_every` | Learning timestep interval | 1 |       
+| `learn_num` | Number of learning passes | 1 |
+| `end_epoch` | final value for epsilon after decay | 0 |
+| `start_epoch`| initial value for epsilon in noise decay process in Agent.act() | 5.0 |
+| `ou_sigma` | Ornstein-Uhlenbeck noise parameter, volatility | 0.2 |
+| `ou_theta` | Ornstein-Uhlenbeck noise parameter, speed of mean reversion | 0.13 |
+
+
+
+
+
+
+
+
+
+
 
 
 
