@@ -97,11 +97,11 @@ The output of the Actor is concatenated to the Critic's first layer output to be
 Following is the Neural Network architecture:
  ##### The actor network
  
- ![](images/actor_arc.png)
+ ![Actor_arc](images/actor.png)
  
  ##### The critic network
  
- ![](images/critic_arc.png)
+ ![Critic_arc](images/critic.png)
   
 
 
