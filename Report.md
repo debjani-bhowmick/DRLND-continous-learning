@@ -4,6 +4,14 @@
 
 The algorithm implemented to solve this environment is `Deep Deterministic Policy Gradient`, which combines both `Q-learning` and `Policy gradients`. At its core, it uses a stochastic behavior policy for good exploration but estimates a deterministic target policy, which is much easier to learn. This is a `model-free`, `off-policy` actor-critic algorithm using deep function approximators that can learn policies in high-dimensional `continuous action spaces`.
 
+The main key points of the training has highlighted bellow:
+* We have used Ornstein-Uhlenbeck process, which by adding certain amount of noise to the action values at each timestep. This noise is correlated to previous noise and therefore tends to stay in the same direction for longer durations without canceling itself out. This allows the agent to maintain velocity and explore the action space with more continuity.
+* we have used Experience replay, whcih allows the RL agent to learn from past experience.
+
+
+## Establish Baseline
+The baseline model selects actions (uniformly) at random at each time step. The maximum resulted score for baseline model is 0.17, which is ofcourse not following the criteria set by Udacity to solve the agent, also if we watch the agent, we can say the model has not converged yet, however, these type of random action could be useful in the early stage of training process as it helps to explore the action space. This insight will come into play later when we implement the Ornstein-Uhlenbeck process and epsilon noise decay.
+![Baseline](images/Baseline.png)
 
 ## The Model
 
@@ -43,36 +51,35 @@ The most straigh forward approach is to define the actions by a twelve dimension
 
 ##### **state-action spaces**
 
-`Number of agents:`  2
-
-`Size of each action:` 2
-
-There are 2 agents. Each observes a state with length: 24
-
-`The state for the first agent looks like`: [ 0.          0.          0.          0.          0.          0.          0.
-  0.          0.          0.          0.          0.          0.          0.
-  0.          0.         -6.65278625 -1.5        -0.          0.
-  6.83172083  6.         -0.          0.        ]
+`Number of agents:`  20
+`Size of each action:`  4
+`There are 20 agents. Each observes a state with length:`  33
+`The state for the first agent looks like:` [  0.00000000e+00  -4.00000000e+00   0.00000000e+00   1.00000000e+00
+  -0.00000000e+00  -0.00000000e+00  -4.37113883e-08   0.00000000e+00
+   0.00000000e+00   0.00000000e+00   0.00000000e+00   0.00000000e+00
+   0.00000000e+00   0.00000000e+00  -1.00000000e+01   0.00000000e+00
+   1.00000000e+00  -0.00000000e+00  -0.00000000e+00  -4.37113883e-08
+   0.00000000e+00   0.00000000e+00   0.00000000e+00   0.00000000e+00
+   0.00000000e+00   0.00000000e+00   5.75471878e+00  -1.00000000e+00
+   5.55726624e+00   0.00000000e+00   1.00000000e+00   0.00000000e+00
+  -1.68164849e-01]
 
 
 #### **Hyperparameters**
 
 | Parameter | Description | Value |
 | --- | --- | --- |
-| `gamma` | Discount factor | 0.99 |
-| `tau` | Soft update of target parameters| 7e-2 |
+| `gamma` | Discount factor | 0.98 |
+| `tau` | Soft update of target parameters| 1e-3 |
 | `lr_actor` | Learning rate for the actor | 1e-3 |
 | `lr_critic` | Learning rate for the critic | 1e-3  |
 | `weight_deacy` | L2 Weight decay | 0.0000 |
-| `epoch decay` | episode to end the noise decay process | 250 |
 | `batch_size` | Minibatch size | 128|
 | `buffer_size` | Size for memory buffer | int(1e6)|
-| `learn_every` | Learning timestep interval | 1 |       
-| `learn_num` | Number of learning passes | 1 |
-| `end_epoch` | final value for epsilon after decay | 0 |
-| `start_epoch`| initial value for epsilon in noise decay process in Agent.act() | 5.0 |
+| `learn_every` | Learning timestep interval | 20 |       
+| `learn_num` | Number of learning passes | 10 |
 | `ou_sigma` | Ornstein-Uhlenbeck noise parameter, volatility | 0.2 |
-| `ou_theta` | Ornstein-Uhlenbeck noise parameter, speed of mean reversion | 0.13 |
+| `ou_theta` | Ornstein-Uhlenbeck noise parameter, speed of mean reversion | 0.15 |
 
 
 
@@ -93,9 +100,6 @@ Following is the Neural Network architecture:
  
  ![](images/critic_arc.png)
   
-
-
-
 
 
 
