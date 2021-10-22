@@ -2,11 +2,18 @@
 
 ## Learning Algorithm
 
-The algorithm implemented to solve this environment is `Deep Deterministic Policy Gradient`, which combines both `Q-learning` and `Policy gradients`. At its core, it uses a stochastic behavior policy for good exploration but estimates a deterministic target policy, which is much easier to learn. This is a `model-free`, `off-policy` actor-critic algorithm using deep function approximators that can learn policies in high-dimensional `continuous action spaces`.
+The problem we are trying to solve has a continous control and action space.
+Following the recommendations given prior to the exercise a modified version of the Deep Deterministic Gradient Policy (DDPG) alorithm has been implemented. See https://arxiv.org/abs/1509.02971.
+The environment that was chosen is the multi agent environment since it allows to learn a succesfull policy in less epsiodes compared to the single agent environment.
 
-The main key points of the training has highlighted bellow:
-* We have used Ornstein-Uhlenbeck process, which by adding certain amount of noise to the action values at each timestep. This noise is correlated to previous noise and therefore tends to stay in the same direction for longer durations without canceling itself out. This allows the agent to maintain velocity and explore the action space with more continuity.
-* we have used Experience replay, whcih allows the RL agent to learn from past experience.
+### Learning Algorithm
+
+The DDPG algorithm as implemented in the pendulum example was used as the starting point: https://github.com/udacity/deep-reinforcement-learning/tree/master/ddpg-pendulum
+
+It uses two actor and two critique deep neural networks. The target actor and crituque networks are updated less frequently to stabilze the learning of the algorithm. The architecture of the neural networks is explained in more detail in the following section.
+Following the given recommendations the networks are updates after 20 time steps with 10 samples that have been obtained from the replay buffer.
+The replay buffer is used to obtain de-correlated samples. The implementation supports both random sub-sampling as well as prirotized sampling where the probabilities are based on the reward associated with the sample contained in the replay buffer.
+An epsilon-greedy actor policy with continous Orstein-Uhlenbeck noise is used, see https://en.wikipedia.org/wiki/Ornstein%E2%80%93Uhlenbeck_process. The inital epsilon parameter, *EPS*, is decreased after each batch learning job by multiplication with the *EPS_MULT* parameter until a minimal threshold of eps_min is reached.
 
 
 ## Establish Baseline
