@@ -72,13 +72,13 @@ The most straigh forward approach is to define the actions by a twelve dimension
 
 | Parameter | Description | Value |
 | --- | --- | --- |
-| `gamma` | Discount factor | 0.98 |
-| `tau` | Soft update of target parameters| 1e-3 |
-| `lr_actor` | Learning rate for the actor | 1e-3 |
-| `lr_critic` | Learning rate for the critic | 1e-3  |
+| `gamma` | Discount factor | 0.99 |
+| `tau` | Soft update of target parameters| 2e-3 |
+| `lr_actor` | Learning rate for the actor | 5e-4 |
+| `lr_critic` | Learning rate for the critic | 2e-3  |
 | `weight_deacy` | L2 Weight decay | 0.0000 |
-| `batch_size` | Minibatch size | 128|
-| `buffer_size` | Size for memory buffer | int(1e6)|
+| `batch_size` | Minibatch size | 512|
+| `buffer_size` | Size for memory buffer | 100000|
 | `learn_every` | Learning timestep interval | 20 |       
 | `learn_num` | Number of learning passes | 10 |
 | `ou_sigma` | Ornstein-Uhlenbeck noise parameter, volatility | 0.2 |
