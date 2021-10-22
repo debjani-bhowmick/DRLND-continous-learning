@@ -1,23 +1,22 @@
-import numpy as np
-import random
 import copy
+import torch
+import random
+import numpy as np
+import torch.optim as optim
+from model import Actor, Critic
+import torch.nn.functional as F
 from collections import namedtuple, deque
 
-from model import Actor, Critic
+tau = 1e-3  
+gamma = 0.99            # Discount factor
+learn_num = 15          # number of learning passes# Soft update of target parameters
+lr_actor = 5e-4        # Learning rate for the actor
+lr_critic = 2e-3       # Learning rate for the critic
+learn_every = 20        # learning timestep interval
+batch_size = 512      # Minibatch size
+weight_decay = 0.0000   # L2 Weight decay
+buffer_size = int(1e6)
 
-import torch
-import torch.nn.functional as F
-import torch.optim as optim
-
-GAMMA = 0.99            # Discount factor
-TAU = 1e-3              # Soft update of target parameters
-LR_ACTOR = 1e-3        # Learning rate for the actor
-LR_CRITIC = 1e-3       # Learning rate for the critic
-WEIGHT_DECAY = 0.0000   # L2 Weight decay
-BATCH_SIZE = 128       # Minibatch size
-BUFFER_SIZE = int(1e6)
-LEARN_EVERY = 20        # learning timestep interval
-LEARN_NUM = 10          # number of learning passes
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
@@ -39,27 +38,28 @@ class Agent():
         # Actor Network (w/ Target Network)
         self.actor_local = Actor(state_size, action_size, random_seed).to(device)
         self.actor_target = Actor(state_size, action_size, random_seed).to(device)
-        self.actor_optimizer = optim.Adam(self.actor_local.parameters(), lr=LR_ACTOR)
+        self.actor_optimizer = optim.Adam(self.actor_local.parameters(), lr=lr_actor)
         
         # Critic Network (w/ Target Network)
         self.critic_local = Critic(state_size, action_size, random_seed).to(device)
         self.critic_target = Critic(state_size, action_size, random_seed).to(device)
-        self.critic_optimizer = optim.Adam(self.critic_local.parameters(), lr=LR_CRITIC, weight_decay=WEIGHT_DECAY)
+        self.critic_optimizer = optim.Adam(self.critic_local.parameters(), lr=lr_critic, weight_decay=weight_decay)
 
         # Noise Process
         self.noise = OUNoise(action_size, random_seed)
 
         # Replay Memory
-        self.memory = ReplayBuffer(action_size, BUFFER_SIZE, BATCH_SIZE, random_seed)
+        self.memory = ReplayBuffer(action_size, buffer_size, batch_size, random_seed)
 
     def step(self, state, action, reward, next_state, done, timestep):
         """ Save experience in replay memory, and use random sample from buffer to learn. """
         # Save experience / reward
         self.memory.add(state, action, reward, next_state, done)
-        if len(self.memory) > BATCH_SIZE and timestep % LEARN_EVERY == 0:
-            for i in range(LEARN_NUM):
+        if len(self.memory) > batch_size and timestep % learn_every == 0:
+            for i in range(learn_num
+                          ):
                 experiences = self.memory.sample()
-                self.learn(experiences, GAMMA)
+                self.learn(experiences, gamma)
 
     def act(self, state, add_noise=True):
         """ Returns actions for given state as per current policy. """
@@ -115,8 +115,8 @@ class Agent():
         self.actor_optimizer.step()
 
         # ----------------------- update target networks ----------------------- #
-        self.soft_update(self.critic_local, self.critic_target, TAU)
-        self.soft_update(self.actor_local, self.actor_target, TAU)
+        self.soft_update(self.critic_local, self.critic_target, tau)
+        self.soft_update(self.actor_local, self.actor_target, tau)
  
     def soft_update(self, local_model, target_model, tau):
         """Soft update model parameters.
