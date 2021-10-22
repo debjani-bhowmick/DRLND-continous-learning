@@ -95,25 +95,15 @@ For both the Actor and Critic, the size of the input linear layer is the state s
 The output of the Actor is concatenated to the Critic's first layer output to be connected to the first hidden layer's input.
 
 Following is the Neural Network architecture:
- ## The actor network
+ ## The actor-critic network
  
  ![Actor_arc](images/actor.png)
  
- ## The critic network
- 
- ![Critic_arc](images/critic.png)
-  
-
-
 
 ## Result
 
-The agent was able to solve the 20 agent Reacher environment. The goal for the performance measure is an average reward of at least +30 over 100 episodes, and over all 20 agents.
-
-
-
-
-
+The agent was able to solve the 26 agent Reacher environment. The goal for the performance measure is an average reward of at least +30 over 100 episodes, and over all 20 agents.
+![Actor_arc](images/solution.png)
 
 ## Future Improvement
 
